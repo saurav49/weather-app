@@ -7,13 +7,10 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <InputLocation />
-      <WeatherInfoCard
-        weatherInfo={weatherInfo}
-        // currentWeather={weatherInfo?.weather[0]?.main}
-        // currentTemp={weatherInfo?.main?.temp}
-        // currentDate={weatherInfo?.currentDate}
-      />
+      <div className="flex flex-col items-center justify-center">
+        <InputLocation />
+        <WeatherInfoCard weatherInfo={weatherInfo} />
+      </div>
     </div>
   );
 }

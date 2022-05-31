@@ -1,42 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "../../hooks/useLocation";
+import { getCurrentDay } from "../../utils";
 
 const InputLocation = () => {
   const [location, setLocation] = useState("silchar");
   const { setWeatherInfo } = useLocation();
-
-  const getCurrentDay = () => {
-    let currentTime = new Date();
-    const dayObj = {
-      0: "Sunday",
-      1: "Monday",
-      2: "Tuesday",
-      3: "Wednesday",
-      4: "Thrusday",
-      5: "Friday",
-      6: "Saturday",
-    };
-    const monthObj = {
-      0: "January",
-      1: "Febuary",
-      2: "March",
-      3: "April",
-      4: "May",
-      5: "June",
-      6: "July",
-      7: "August",
-      8: "September",
-      9: "October",
-      10: "November",
-      11: "December",
-    };
-
-    const day = dayObj[currentTime.getDay()];
-    const month = monthObj[currentTime.getMonth()];
-
-    return `${day}, ${month} ${currentTime.getDate()}`;
-  };
 
   useEffect(() => {
     let timer;
@@ -49,7 +18,7 @@ const InputLocation = () => {
           currentTemp: Math.round(response.data.main.temp),
           currentWeather: response.data.weather[0].main,
           currentDay: getCurrentDay(),
-          currentWeatherIcon: response.data.weather[0].icon,
+          currentWeatherDesc: response.data.weather[0].description,
         });
       })();
     }, 300);
@@ -60,17 +29,27 @@ const InputLocation = () => {
   }, [location, setWeatherInfo]);
 
   return (
-    <div>
-      <label htmlFor="location">LOCATION</label>
-      <input
-        type="text"
-        name="location"
-        id="location"
-        placeholder="Enter a city"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-      />
-      <button>set</button>
+    <div className="flex flex-col mt-10">
+      <label
+        htmlFor="location"
+        className="uppercase text-gray-400 text-xs font-medium"
+      >
+        Location
+      </label>
+      <div className="border-b-2  mt-1">
+        <input
+          type="text"
+          name="location"
+          id="location"
+          placeholder="Enter a city"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          className="text-lg tracking-wider"
+        />
+        <button className="text-gray-400 uppercase text-xs font-medium">
+          set
+        </button>
+      </div>
     </div>
   );
 };
