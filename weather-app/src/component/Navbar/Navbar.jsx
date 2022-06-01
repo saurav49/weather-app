@@ -6,8 +6,6 @@ const Navbar = () => {
     weatherInfo: { currentWeather },
   } = useLocation();
 
-  console.log(weatherColors, currentWeather);
-
   return (
     <nav
       className={`uppercase ${
