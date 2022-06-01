@@ -65,7 +65,7 @@ const InputLocation = () => {
             placeholder="Enter a city"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="text-lg tracking-wider outline-0"
+            className="text-lg tracking-wider outline-0 pb-1"
           />
           {error && <p className="italic text-sm text-red-600 mt-1">{error}</p>}
         </div>

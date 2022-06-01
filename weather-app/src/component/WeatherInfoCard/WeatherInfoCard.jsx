@@ -7,7 +7,7 @@ const WeatherInfoCard = ({ weatherInfo }) => {
   const { loading } = useLocation();
   return (
     <div
-      className="flex flex-col mt-7 w-[280px] h-[320px] md:w-[420px] md:h-[240px] p-4 rounded-2xl bg-gray-100 shadow-md border-2 border-gray-100
+      className="flex flex-col mt-7 w-[280px] h-[340px] md:w-[440px] md:h-[240px] p-4 rounded-2xl bg-gray-100 shadow-default border-2 border-gray-100
     md:flex md:flex-row md:items-center md:w-[350px] md:py-6
     "
     >
@@ -22,7 +22,7 @@ const WeatherInfoCard = ({ weatherInfo }) => {
               <img
                 src={weatherImages[`${weatherInfo?.currentWeather}`]}
                 alt="weather"
-                className="w-2/4 md:w-[80%]"
+                className="w-2/4 md:w-[70%]"
               />
             </div>
           ) : (
@@ -35,11 +35,11 @@ const WeatherInfoCard = ({ weatherInfo }) => {
             </div>
           )}
           {weatherInfo.hasOwnProperty("currentWeather") && (
-            <div className="px-3 text-gray-800 md:w-1/2 md:ml-8">
-              <h1 className="text-4xl font-normal my-3">
+            <div className="px-3 text-gray-700 mt-4 md:w-1/2 md:ml-8">
+              <h1 className="text-5xl font-normal my-3">
                 {weatherInfo?.currentTemp}&#176;
               </h1>
-              <h2 className="text-xl font-medium">
+              <h2 className="text-2xl font-medium mt-5">
                 {weatherInfo?.currentWeather}
               </h2>
               <p className="text-xs font-medium my-2">
