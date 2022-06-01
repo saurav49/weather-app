@@ -3,6 +3,13 @@ import mist from "./assets/mist.png";
 import thunderstorm from "./assets/storm.png";
 import sun from "./assets/sun.png";
 import snowflake from "./assets/snowflake.png";
+import drizzle from "./assets/drizzle.png";
+import smoke from "./assets/carbon-dioxide.png";
+import dust from "./assets/dust.png";
+import fog from "./assets/mist1.png";
+import sand from "./assets/sand.png";
+import ash from "./assets/urn.png";
+import tornado from "./assets/tornado.png";
 
 const getCurrentDay = () => {
   let currentTime = new Date();
@@ -37,15 +44,40 @@ const getCurrentDay = () => {
 };
 
 const weatherImages = {
-  "clear sky": sun,
-  "few clouds": cloudy,
-  "scattered clouds": cloudy,
-  "broken clouds": cloudy,
-  "shower rain": thunderstorm,
-  rain: thunderstorm,
-  thunderstorm: thunderstorm,
-  snow: snowflake,
-  mist: mist,
+  Clear: sun,
+  Clouds: cloudy,
+  Rain: thunderstorm,
+  Thunderstorm: thunderstorm,
+  Snow: snowflake,
+  Mist: mist,
+  Drizzle: drizzle,
+  Smoke: smoke,
+  Haze: mist,
+  Dust: dust,
+  Fog: fog,
+  Sand: sand,
+  Ash: ash,
+  Squall: thunderstorm,
+  Tornado: tornado,
 };
 
-export { getCurrentDay, weatherImages };
+const weatherColors = {
+  Clear: "bg-amber-400",
+  Clouds: "bg-sky-300",
+  Rain: "bg-sky-500",
+  Thunderstorm: "bg-sky-500",
+  Snow: "bg-blue-200",
+  Mist: "bg-neutral-500",
+  Drizzle: "bg-sky-500",
+  Smoke: "bg-slate-600",
+  Haze: "bg-neutral-500",
+  Dust: "bg-neutral-300",
+  Fog: "bg-gray-300",
+  Sand: "bg-amber-300",
+  Ash: "bg-slate-700",
+  Squall: "bg-sky-500",
+  Tornado: "bg-neutral-500",
+  notPresent: "bg-stone-400",
+};
+
+export { getCurrentDay, weatherImages, weatherColors };
