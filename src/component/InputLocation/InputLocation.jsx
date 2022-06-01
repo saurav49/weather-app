@@ -36,7 +36,7 @@ const InputLocation = () => {
     return function () {
       clearTimeout(timer);
     };
-  }, [location, setWeatherInfo]);
+  }, [location, setWeatherInfo, setLoading]);
 
   const handleSetLocation = () => {
     if (location.length === 0) {
