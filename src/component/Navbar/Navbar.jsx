@@ -1,4 +1,4 @@
-import { weatherColors } from "../../utils";
+import { weatherImagesAndColors } from "../../utils";
 import { useLocation } from "../../hooks/useLocation";
 
 const Navbar = () => {
@@ -10,8 +10,8 @@ const Navbar = () => {
     <nav
       className={`uppercase ${
         currentWeather
-          ? weatherColors[currentWeather]
-          : weatherColors["notPresent"]
+          ? weatherImagesAndColors[currentWeather]["color"]
+          : weatherImagesAndColors["notPresent"]["color"]
       } text-white tracking-wide text-md font-normal py-3 px-5 w-full text-right md:text-center`}
     >
       my weather

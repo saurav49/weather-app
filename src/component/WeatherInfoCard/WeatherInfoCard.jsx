@@ -1,5 +1,4 @@
-import { weatherImages } from "../../utils";
-import notPresent from "../../assets/undraw_weather_app_re_kcb1.svg";
+import { weatherImagesAndColors } from "../../utils";
 import Loader from "react-loader-spinner";
 import { useLocation } from "../../hooks/useLocation";
 
@@ -20,7 +19,11 @@ const WeatherInfoCard = ({ weatherInfo }) => {
           {weatherInfo.hasOwnProperty("currentWeather") ? (
             <div className="w-full md:w-1/2 flex items-center justify-center">
               <img
-                src={weatherImages[`${weatherInfo?.currentWeather}`]}
+                src={
+                  weatherImagesAndColors[`${weatherInfo?.currentWeather}`][
+                    "img"
+                  ]
+                }
                 alt="weather"
                 className="w-2/4 md:w-[70%]"
               />
@@ -28,7 +31,7 @@ const WeatherInfoCard = ({ weatherInfo }) => {
           ) : (
             <div className="w-full h-full flex items-center justify-center p-4">
               <img
-                src={notPresent}
+                src={weatherImagesAndColors["notPresent"]["img"]}
                 alt="weather"
                 className="w-full md:w-[70%]"
               />

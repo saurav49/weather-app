@@ -17,6 +17,11 @@ const InputLocation = () => {
       (async function () {
         try {
           setLoading(true);
+          if (location.length === 0) {
+            setLoading(false);
+            setWeatherInfo({});
+            return;
+          }
           const response = await axios.get(
             `${WEATHER__API}?q=${location}&appid=${API__KEY}&units=metric`
           );

@@ -10,6 +10,7 @@ import fog from "./assets/mist1.png";
 import sand from "./assets/sand.png";
 import ash from "./assets/urn.png";
 import tornado from "./assets/tornado.png";
+import notPresent from "./assets/undraw_weather_app_re_kcb1.svg";
 
 const getCurrentDay = () => {
   let currentTime = new Date();
@@ -43,41 +44,23 @@ const getCurrentDay = () => {
   return `${day}, ${month} ${currentTime.getDate()}`;
 };
 
-const weatherImages = {
-  Clear: sun,
-  Clouds: cloudy,
-  Rain: thunderstorm,
-  Thunderstorm: thunderstorm,
-  Snow: snowflake,
-  Mist: mist,
-  Drizzle: drizzle,
-  Smoke: smoke,
-  Haze: mist,
-  Dust: dust,
-  Fog: fog,
-  Sand: sand,
-  Ash: ash,
-  Squall: thunderstorm,
-  Tornado: tornado,
+const weatherImagesAndColors = {
+  Clear: { img: sun, color: "bg-amber-400" },
+  Clouds: { img: cloudy, color: "bg-sky-300" },
+  Rain: { img: thunderstorm, color: "bg-sky-500" },
+  Thunderstorm: { img: thunderstorm, color: "bg-sky-500" },
+  Snow: { img: snowflake, color: "bg-blue-200" },
+  Mist: { img: mist, color: "bg-neutral-500" },
+  Drizzle: { img: drizzle, color: "bg-sky-500" },
+  Smoke: { img: smoke, color: "bg-slate-600" },
+  Haze: { img: mist, color: "bg-neutral-500" },
+  Dust: { img: dust, color: "bg-neutral-300" },
+  Fog: { img: fog, color: "bg-gray-300" },
+  Sand: { img: sand, color: "bg-amber-300" },
+  Ash: { img: ash, color: "bg-slate-700" },
+  Squall: { img: thunderstorm, color: "bg-sky-500" },
+  Tornado: { img: tornado, color: "bg-neutral-500" },
+  notPresent: { img: notPresent, color: "bg-stone-400" },
 };
 
-const weatherColors = {
-  Clear: "bg-amber-400",
-  Clouds: "bg-sky-300",
-  Rain: "bg-sky-500",
-  Thunderstorm: "bg-sky-500",
-  Snow: "bg-blue-200",
-  Mist: "bg-neutral-500",
-  Drizzle: "bg-sky-500",
-  Smoke: "bg-slate-600",
-  Haze: "bg-neutral-500",
-  Dust: "bg-neutral-300",
-  Fog: "bg-gray-300",
-  Sand: "bg-amber-300",
-  Ash: "bg-slate-700",
-  Squall: "bg-sky-500",
-  Tornado: "bg-neutral-500",
-  notPresent: "bg-stone-400",
-};
-
-export { getCurrentDay, weatherImages, weatherColors };
+export { getCurrentDay, weatherImagesAndColors };
